@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Neovim local artifacts
+.nvimlog
+.netrwhist
+Session.vim
+*.log
+*.swp
+*.swo
+*~
+
+# Local environment / secrets
+.env
+.env.*
+*.local
+secrets.*
+
+# IDE/project-local settings
+.vscode/
+.idea/
