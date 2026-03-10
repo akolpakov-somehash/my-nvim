@@ -19,12 +19,14 @@ vim.api.nvim_create_autocmd("CursorHold", {
 --- Keys
 vim.keymap.set("n", "<C-b>", "<Cmd>Neotree toggle<CR>")
 local builtin = require("telescope.builtin")
+local telescope_ignore = { "var/", "dev/", "integration-tests/", "generated/" }
 vim.keymap.set("n", "<leader>ff", function()
-	builtin.find_files({ no_ignore = true })
+	builtin.find_files({ no_ignore = true, file_ignore_patterns = telescope_ignore })
 end, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fg", function()
 	builtin.live_grep({
 		additional_args = { "--no-ignore" },
+		file_ignore_patterns = telescope_ignore,
 	})
 end, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })

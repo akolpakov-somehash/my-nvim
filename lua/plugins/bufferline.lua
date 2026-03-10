@@ -29,7 +29,7 @@ return {
 					diagnostics = "nvim_lsp",
 					separator_style = "slant",
 					always_show_bufferline = true,
-					auto_toggle_bufferline = false,
+					auto_toggle_bufferline = true,
 					close_command = function(bufnr)
 						require("bufdelete").bufdelete(bufnr, false)
 					end,
